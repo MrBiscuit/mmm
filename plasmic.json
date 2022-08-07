@@ -1,0 +1,219 @@
+{
+  "platform": "nextjs",
+  "code": {
+    "lang": "ts",
+    "scheme": "blackbox",
+    "reactRuntime": "classic"
+  },
+  "style": {
+    "scheme": "css-modules",
+    "defaultStyleCssFilePath": "plasmic/plasmic__default_style.module.css"
+  },
+  "images": {
+    "scheme": "public-files",
+    "publicDir": "../public",
+    "publicUrlPrefix": "/"
+  },
+  "tokens": {
+    "scheme": "theo",
+    "tokensFilePath": "plasmic-tokens.theo.json"
+  },
+  "srcDir": "components",
+  "defaultPlasmicDir": "./plasmic",
+  "projects": [
+    {
+      "projectId": "mn1ZNGsn3XwqRSXADLXKwX",
+      "projectApiToken": "EffJJh11lsNY9PClsVui1AITvsf7SLhe4D2AXWQNh0KXwiA1hPO5DpmDsqKGZzSAxK9EemhSWFvCOez2f702g",
+      "projectName": "Blank project",
+      "version": "latest",
+      "cssFilePath": "plasmic/blank_project/plasmic_blank_project.module.css",
+      "components": [
+        {
+          "id": "lwZBb7B2-AWx",
+          "name": "Homepage",
+          "type": "managed",
+          "projectId": "mn1ZNGsn3XwqRSXADLXKwX",
+          "renderModuleFilePath": "plasmic/blank_project/PlasmicHomepage.tsx",
+          "importSpec": {
+            "modulePath": "../pages/index.tsx"
+          },
+          "cssFilePath": "plasmic/blank_project/PlasmicHomepage.module.css",
+          "scheme": "blackbox",
+          "componentType": "page"
+        }
+      ],
+      "icons": [],
+      "images": [],
+      "indirect": false,
+      "globalContextsFilePath": "",
+      "codeComponents": [
+        {
+          "id": "LRFPPuGisY",
+          "name": "Image",
+          "componentImportPath": "@chakra-ui/react"
+        },
+        {
+          "id": "NQ4BdCXQvL",
+          "name": "AspectRatio",
+          "componentImportPath": "@chakra-ui/react"
+        },
+        {
+          "id": "z05_GGnPt1",
+          "name": "ButtonGroup",
+          "componentImportPath": "@chakra-ui/react"
+        },
+        {
+          "id": "lBI7CYLJKC",
+          "name": "Button",
+          "componentImportPath": "@chakra-ui/react"
+        },
+        {
+          "id": "TFAlJNpC2r",
+          "name": "Stack",
+          "componentImportPath": "@chakra-ui/react"
+        },
+        {
+          "id": "498QTUgUI2b",
+          "name": "Checkbox",
+          "componentImportPath": "@chakra-ui/react"
+        },
+        {
+          "id": "-OCQWvB3hmc",
+          "name": "CheckboxGroup",
+          "componentImportPath": "@chakra-ui/react"
+        },
+        {
+          "id": "qvP-c_lizPb",
+          "name": "Input",
+          "componentImportPath": "@chakra-ui/react"
+        },
+        {
+          "id": "tgX4qcL5qKk",
+          "name": "NumberInputField",
+          "componentImportPath": "@chakra-ui/react"
+        },
+        {
+          "id": "kKMO80aFVAu",
+          "name": "NumberIncrementStepper",
+          "componentImportPath": "@chakra-ui/react"
+        },
+        {
+          "id": "JdqSKBIDFP1",
+          "name": "NumberDecrementStepper",
+          "componentImportPath": "@chakra-ui/react"
+        },
+        {
+          "id": "6NyNAwxhSqI",
+          "name": "NumberInputStepper",
+          "componentImportPath": "@chakra-ui/react"
+        },
+        {
+          "id": "M5UEPTINXEU",
+          "name": "NumberInput",
+          "componentImportPath": "@chakra-ui/react"
+        },
+        {
+          "id": "chdOYOaIfrh",
+          "name": "PinInputField",
+          "componentImportPath": "@chakra-ui/react"
+        },
+        {
+          "id": "ohichqBoznd",
+          "name": "PinInput",
+          "componentImportPath": "@chakra-ui/react"
+        },
+        {
+          "id": "lQzFbNgiCYI",
+          "name": "Radio",
+          "componentImportPath": "@chakra-ui/react"
+        },
+        {
+          "id": "vVYokNpJReM",
+          "name": "RadioGroup",
+          "componentImportPath": "@chakra-ui/react"
+        },
+        {
+          "id": "WONXApDq6y",
+          "name": "Divider",
+          "componentImportPath": "@chakra-ui/react"
+        },
+        {
+          "id": "ir7AxY5Rgg",
+          "name": "Code",
+          "componentImportPath": "@chakra-ui/react"
+        },
+        {
+          "id": "zprI58GtvD",
+          "name": "Kbd",
+          "componentImportPath": "@chakra-ui/react"
+        },
+        {
+          "id": "rwZ_P-lUbf",
+          "name": "StatLabel",
+          "componentImportPath": "@chakra-ui/react"
+        },
+        {
+          "id": "GRJ7z-sfLI",
+          "name": "StatNumber",
+          "componentImportPath": "@chakra-ui/react"
+        },
+        {
+          "id": "kXkG5kXOBP1",
+          "name": "StatArrow",
+          "componentImportPath": "@chakra-ui/react"
+        },
+        {
+          "id": "Ib6pD3xuSwL",
+          "name": "StatHelpText",
+          "componentImportPath": "@chakra-ui/react"
+        },
+        {
+          "id": "DGteNCf1dk8",
+          "name": "Stat",
+          "componentImportPath": "@chakra-ui/react"
+        },
+        {
+          "id": "e1H2jswnag",
+          "name": "BreadcrumbItem",
+          "componentImportPath": "@chakra-ui/react"
+        },
+        {
+          "id": "2_XxWYnJ9H",
+          "name": "BreadcrumbLink",
+          "componentImportPath": "@chakra-ui/react"
+        },
+        {
+          "id": "C0oswHBaDm",
+          "name": "Breadcrumb",
+          "componentImportPath": "@chakra-ui/react"
+        },
+        {
+          "id": "g3ij24bInV",
+          "name": "BreadcrumbSeparator",
+          "componentImportPath": "@chakra-ui/react"
+        },
+        {
+          "id": "vOT4NZm6m6",
+          "name": "Text",
+          "componentImportPath": "@chakra-ui/react"
+        }
+      ]
+    }
+  ],
+  "globalVariants": {
+    "variantGroups": [
+      {
+        "id": "1stJQ6tsfmTgf",
+        "name": "Screen",
+        "projectId": "mn1ZNGsn3XwqRSXADLXKwX",
+        "contextFilePath": "plasmic/blank_project/PlasmicGlobalVariant__Screen.tsx"
+      }
+    ]
+  },
+  "wrapPagesWithGlobalContexts": true,
+  "nextjsConfig": {
+    "pagesDir": "../pages"
+  },
+  "cliVersion": "0.1.184",
+  "$schema": "https://unpkg.com/@plasmicapp/cli@0.1.184/dist/plasmic.schema.json"
+}
