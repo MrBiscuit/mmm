@@ -36,9 +36,21 @@ import {
 } from "@plasmicapp/react-web";
 import { ButtonGroup } from "@chakra-ui/react"; // plasmic-import: z05_GGnPt1/codeComponent
 import { Button } from "@chakra-ui/react"; // plasmic-import: lBI7CYLJKC/codeComponent
-import { Text } from "@chakra-ui/react"; // plasmic-import: vOT4NZm6m6/codeComponent
+import { NumberInput } from "@chakra-ui/react"; // plasmic-import: M5UEPTINXEU/codeComponent
+import { NumberInputField } from "@chakra-ui/react"; // plasmic-import: tgX4qcL5qKk/codeComponent
+import { NumberInputStepper } from "@chakra-ui/react"; // plasmic-import: 6NyNAwxhSqI/codeComponent
+import { NumberIncrementStepper } from "@chakra-ui/react"; // plasmic-import: kKMO80aFVAu/codeComponent
+import { NumberDecrementStepper } from "@chakra-ui/react"; // plasmic-import: JdqSKBIDFP1/codeComponent
 import { RadioGroup } from "@chakra-ui/react"; // plasmic-import: vVYokNpJReM/codeComponent
 import { Radio } from "@chakra-ui/react"; // plasmic-import: lQzFbNgiCYI/codeComponent
+import { TableContainer } from "@chakra-ui/react"; // plasmic-import: vxqFFmbt7P/codeComponent
+import { Table } from "@chakra-ui/react"; // plasmic-import: p-uH97tBjT/codeComponent
+import { TableCaption } from "@chakra-ui/react"; // plasmic-import: jruH1ReJS_/codeComponent
+import { Thead } from "@chakra-ui/react"; // plasmic-import: EknQA5DBzi/codeComponent
+import { Tr } from "@chakra-ui/react"; // plasmic-import: yVuCojkn7I/codeComponent
+import { Th } from "@chakra-ui/react"; // plasmic-import: yv2nJfPfy_/codeComponent
+import { Tbody } from "@chakra-ui/react"; // plasmic-import: pmVMk5B8To/codeComponent
+import { Td } from "@chakra-ui/react"; // plasmic-import: D42FISmxted/codeComponent
 import { CheckboxGroup } from "@chakra-ui/react"; // plasmic-import: -OCQWvB3hmc/codeComponent
 import { Checkbox } from "@chakra-ui/react"; // plasmic-import: 498QTUgUI2b/codeComponent
 import { Breadcrumb } from "@chakra-ui/react"; // plasmic-import: C0oswHBaDm/codeComponent
@@ -51,6 +63,11 @@ import { StatLabel } from "@chakra-ui/react"; // plasmic-import: rwZ_P-lUbf/code
 import { StatNumber } from "@chakra-ui/react"; // plasmic-import: GRJ7z-sfLI/codeComponent
 import { StatHelpText } from "@chakra-ui/react"; // plasmic-import: Ib6pD3xuSwL/codeComponent
 import { StatArrow } from "@chakra-ui/react"; // plasmic-import: kXkG5kXOBP1/codeComponent
+import { Tabs } from "@chakra-ui/react"; // plasmic-import: 9bEU_Pxl1R/codeComponent
+import { TabList } from "@chakra-ui/react"; // plasmic-import: VzW3-QlDZ-/codeComponent
+import { Tab } from "@chakra-ui/react"; // plasmic-import: j36wLaWZuB/codeComponent
+import { TabPanels } from "@chakra-ui/react"; // plasmic-import: jlPeg7hy9p/codeComponent
+import { TabPanel } from "@chakra-ui/react"; // plasmic-import: 0gFJbuL9g9/codeComponent
 
 import "@plasmicapp/react-web/lib/plasmic.css";
 
@@ -71,11 +88,20 @@ export type PlasmicHomepage__OverridesType = {
   root?: p.Flex<"div">;
   section?: p.Flex<"section">;
   buttonGroup?: p.Flex<typeof ButtonGroup>;
-  radioGroup?: p.Flex<typeof RadioGroup>;
+  mainActoin?: p.Flex<typeof Button>;
+  numberInput?: p.Flex<typeof NumberInput>;
+  tableContainer?: p.Flex<typeof TableContainer>;
+  table?: p.Flex<typeof Table>;
+  tableCaption?: p.Flex<typeof TableCaption>;
+  thead?: p.Flex<typeof Thead>;
+  tbody?: p.Flex<typeof Tbody>;
   checkboxGroup?: p.Flex<typeof CheckboxGroup>;
   breadcrumb?: p.Flex<typeof Breadcrumb>;
   aspectRatio?: p.Flex<typeof AspectRatio>;
   stat?: p.Flex<typeof Stat>;
+  tabs?: p.Flex<typeof Tabs>;
+  tabList?: p.Flex<typeof TabList>;
+  tabPanels?: p.Flex<typeof TabPanels>;
 };
 
 export interface DefaultHomepageProps {}
@@ -143,7 +169,9 @@ function PlasmicHomepage__RenderFunc(props: {
               spacing={"0.5rem" as const}
             >
               <Button
-                className={classNames("__wab_instance", sty.button__h3H7J)}
+                data-plasmic-name={"mainActoin"}
+                data-plasmic-override={overrides.mainActoin}
+                className={classNames("__wab_instance", sty.mainActoin)}
                 colorScheme={"blue" as const}
                 variant={"solid" as const}
               >
@@ -216,25 +244,56 @@ function PlasmicHomepage__RenderFunc(props: {
               </React.Fragment>
             </div>
 
-            <Text
-              className={classNames("__wab_instance", sty.text__siCJs)}
-              textTransform={"none" as const}
+            <NumberInput
+              data-plasmic-name={"numberInput"}
+              data-plasmic-override={overrides.numberInput}
+              className={classNames("__wab_instance", sty.numberInput)}
+              errorBorderColor={"red.500" as const}
+              focusBorderColor={"blue.500" as const}
+              format={(() => {
+                try {
+                  return val => `$` + val;
+                } catch (e) {
+                  if (e instanceof TypeError) {
+                    return undefined;
+                  }
+                  throw e;
+                }
+              })()}
+              size={"lg" as const}
+              variant={"outline" as const}
             >
-              <div
+              <NumberInputField
                 className={classNames(
-                  projectcss.all,
-                  projectcss.__wab_text,
-                  sty.text__hTkwp
+                  "__wab_instance",
+                  sty.numberInputField__k9UzJ
+                )}
+              />
+
+              <NumberInputStepper
+                className={classNames(
+                  "__wab_instance",
+                  sty.numberInputStepper__hG9N1
                 )}
               >
-                {"Some text"}
-              </div>
-            </Text>
+                <NumberIncrementStepper
+                  className={classNames(
+                    "__wab_instance",
+                    sty.numberIncrementStepper__nbz0W
+                  )}
+                />
+
+                <NumberDecrementStepper
+                  className={classNames(
+                    "__wab_instance",
+                    sty.numberDecrementStepper__ycjK0
+                  )}
+                />
+              </NumberInputStepper>
+            </NumberInput>
 
             <RadioGroup
-              data-plasmic-name={"radioGroup"}
-              data-plasmic-override={overrides.radioGroup}
-              className={classNames("__wab_instance", sty.radioGroup)}
+              className={classNames("__wab_instance", sty.radioGroup___2Ioea)}
               size={"lg" as const}
             >
               <p.Stack
@@ -308,6 +367,363 @@ function PlasmicHomepage__RenderFunc(props: {
               </p.Stack>
             </RadioGroup>
 
+            <RadioGroup
+              className={classNames("__wab_instance", sty.radioGroup__ovRt)}
+              size={"lg" as const}
+            >
+              <p.Stack
+                as={"div"}
+                hasGap={true}
+                className={classNames(projectcss.all, sty.freeBox__mwd7I)}
+              >
+                <Radio
+                  className={classNames("__wab_instance", sty.radio__zA6N)}
+                  spacing={"0.5rem" as const}
+                  value={"1" as const}
+                >
+                  <div
+                    className={classNames(
+                      projectcss.all,
+                      projectcss.__wab_text,
+                      sty.text__zpFG
+                    )}
+                  >
+                    {"Radio 1"}
+                  </div>
+                </Radio>
+
+                <Radio
+                  className={classNames("__wab_instance", sty.radio__cLtLk)}
+                  spacing={"0.5rem" as const}
+                  value={"2" as const}
+                >
+                  <div
+                    className={classNames(
+                      projectcss.all,
+                      projectcss.__wab_text,
+                      sty.text__bnoUr
+                    )}
+                  >
+                    {"Radio 2"}
+                  </div>
+                </Radio>
+
+                <Radio
+                  className={classNames("__wab_instance", sty.radio__pPGo)}
+                  spacing={"0.5rem" as const}
+                  value={"3" as const}
+                >
+                  <div
+                    className={classNames(
+                      projectcss.all,
+                      projectcss.__wab_text,
+                      sty.text__wrgMy
+                    )}
+                  >
+                    {"Radio 3"}
+                  </div>
+                </Radio>
+
+                <Radio
+                  className={classNames("__wab_instance", sty.radio__mK8V)}
+                  spacing={"0.5rem" as const}
+                  value={"4" as const}
+                >
+                  <div
+                    className={classNames(
+                      projectcss.all,
+                      projectcss.__wab_text,
+                      sty.text__wyUd0
+                    )}
+                  >
+                    {"Radio 4"}
+                  </div>
+                </Radio>
+              </p.Stack>
+            </RadioGroup>
+
+            <TableContainer
+              data-plasmic-name={"tableContainer"}
+              data-plasmic-override={overrides.tableContainer}
+              className={classNames("__wab_instance", sty.tableContainer)}
+            >
+              <Table
+                data-plasmic-name={"table"}
+                data-plasmic-override={overrides.table}
+                className={classNames("__wab_instance", sty.table)}
+                colorScheme={"gray" as const}
+                size={"md" as const}
+                variant={"striped" as const}
+              >
+                <TableCaption
+                  data-plasmic-name={"tableCaption"}
+                  data-plasmic-override={overrides.tableCaption}
+                  className={classNames("__wab_instance", sty.tableCaption)}
+                  placement={"bottom" as const}
+                >
+                  <div
+                    className={classNames(
+                      projectcss.all,
+                      projectcss.__wab_text,
+                      sty.text___3LKRi
+                    )}
+                  >
+                    {"Imperial to metric conversion factors"}
+                  </div>
+                </TableCaption>
+
+                <Thead
+                  data-plasmic-name={"thead"}
+                  data-plasmic-override={overrides.thead}
+                  className={classNames("__wab_instance", sty.thead)}
+                >
+                  <Tr className={classNames("__wab_instance", sty.tr__hx3Qz)}>
+                    <Th className={classNames("__wab_instance", sty.th__hzYkt)}>
+                      <div
+                        className={classNames(
+                          projectcss.all,
+                          projectcss.__wab_text,
+                          sty.text__pskIp
+                        )}
+                      >
+                        {"TO CONVERT"}
+                      </div>
+                    </Th>
+
+                    <Th className={classNames("__wab_instance", sty.th__jiIsO)}>
+                      <div
+                        className={classNames(
+                          projectcss.all,
+                          projectcss.__wab_text,
+                          sty.text__hD2VR
+                        )}
+                      >
+                        {"INTO"}
+                      </div>
+                    </Th>
+
+                    <Th className={classNames("__wab_instance", sty.th__xpBh4)}>
+                      <div
+                        className={classNames(
+                          projectcss.all,
+                          projectcss.__wab_text,
+                          sty.text__b8HCj
+                        )}
+                      >
+                        {"MULTIPLY BY"}
+                      </div>
+                    </Th>
+                  </Tr>
+                </Thead>
+
+                <Tbody
+                  data-plasmic-name={"tbody"}
+                  data-plasmic-override={overrides.tbody}
+                  className={classNames("__wab_instance", sty.tbody)}
+                >
+                  <Tr className={classNames("__wab_instance", sty.tr__rDoH0)}>
+                    <Td className={classNames("__wab_instance", sty.td___1Syg)}>
+                      <div
+                        className={classNames(
+                          projectcss.all,
+                          projectcss.__wab_text,
+                          sty.text___0MbVg
+                        )}
+                      >
+                        {"inches"}
+                      </div>
+                    </Td>
+
+                    <Td className={classNames("__wab_instance", sty.td__eMmlv)}>
+                      <div
+                        className={classNames(
+                          projectcss.all,
+                          projectcss.__wab_text,
+                          sty.text__c9Th0
+                        )}
+                      >
+                        {"millimetres (mm)"}
+                      </div>
+                    </Td>
+
+                    <Td
+                      className={classNames("__wab_instance", sty.td___98Kzl)}
+                    >
+                      <div
+                        className={classNames(
+                          projectcss.all,
+                          projectcss.__wab_text,
+                          sty.text__mVEg2
+                        )}
+                      >
+                        {"25.4"}
+                      </div>
+                    </Td>
+                  </Tr>
+
+                  <Tr className={classNames("__wab_instance", sty.tr__uUs4H)}>
+                    <Td className={classNames("__wab_instance", sty.td__ubAsp)}>
+                      <div
+                        className={classNames(
+                          projectcss.all,
+                          projectcss.__wab_text,
+                          sty.text__aOixx
+                        )}
+                      >
+                        {"inches"}
+                      </div>
+                    </Td>
+
+                    <Td className={classNames("__wab_instance", sty.td__eMmlv)}>
+                      <div
+                        className={classNames(
+                          projectcss.all,
+                          projectcss.__wab_text,
+                          sty.text__pgsHq
+                        )}
+                      >
+                        {"millimetres (mm)"}
+                      </div>
+                    </Td>
+
+                    <Td
+                      className={classNames("__wab_instance", sty.td___98Kzl)}
+                    >
+                      <div
+                        className={classNames(
+                          projectcss.all,
+                          projectcss.__wab_text,
+                          sty.text___2UyNd
+                        )}
+                      >
+                        {"25.4"}
+                      </div>
+                    </Td>
+                  </Tr>
+
+                  <Tr className={classNames("__wab_instance", sty.tr__lLeCo)}>
+                    <Td className={classNames("__wab_instance", sty.td__jiMei)}>
+                      <div
+                        className={classNames(
+                          projectcss.all,
+                          projectcss.__wab_text,
+                          sty.text__h1WF8
+                        )}
+                      >
+                        {"inches"}
+                      </div>
+                    </Td>
+
+                    <Td className={classNames("__wab_instance", sty.td__eMmlv)}>
+                      <div
+                        className={classNames(
+                          projectcss.all,
+                          projectcss.__wab_text,
+                          sty.text__d6Ulu
+                        )}
+                      >
+                        {"millimetres (mm)"}
+                      </div>
+                    </Td>
+
+                    <Td
+                      className={classNames("__wab_instance", sty.td___98Kzl)}
+                    >
+                      <div
+                        className={classNames(
+                          projectcss.all,
+                          projectcss.__wab_text,
+                          sty.text__otpkx
+                        )}
+                      >
+                        {"25.4"}
+                      </div>
+                    </Td>
+                  </Tr>
+
+                  <Tr className={classNames("__wab_instance", sty.tr__oAaHr)}>
+                    <Td className={classNames("__wab_instance", sty.td__vn8A)}>
+                      <div
+                        className={classNames(
+                          projectcss.all,
+                          projectcss.__wab_text,
+                          sty.text___1DUnP
+                        )}
+                      >
+                        {"inches"}
+                      </div>
+                    </Td>
+
+                    <Td className={classNames("__wab_instance", sty.td__eMmlv)}>
+                      <div
+                        className={classNames(
+                          projectcss.all,
+                          projectcss.__wab_text,
+                          sty.text__wGszV
+                        )}
+                      >
+                        {"millimetres (mm)"}
+                      </div>
+                    </Td>
+
+                    <Td
+                      className={classNames("__wab_instance", sty.td___98Kzl)}
+                    >
+                      <div
+                        className={classNames(
+                          projectcss.all,
+                          projectcss.__wab_text,
+                          sty.text___7J2P
+                        )}
+                      >
+                        {"25.4"}
+                      </div>
+                    </Td>
+                  </Tr>
+
+                  <Tr className={classNames("__wab_instance", sty.tr__y0QxY)}>
+                    <Td className={classNames("__wab_instance", sty.td__djzKw)}>
+                      <div
+                        className={classNames(
+                          projectcss.all,
+                          projectcss.__wab_text,
+                          sty.text__e0AMp
+                        )}
+                      >
+                        {"inches"}
+                      </div>
+                    </Td>
+
+                    <Td className={classNames("__wab_instance", sty.td__eMmlv)}>
+                      <div
+                        className={classNames(
+                          projectcss.all,
+                          projectcss.__wab_text,
+                          sty.text__sRp1O
+                        )}
+                      >
+                        {"millimetres (mm)"}
+                      </div>
+                    </Td>
+
+                    <Td
+                      className={classNames("__wab_instance", sty.td___98Kzl)}
+                    >
+                      <div
+                        className={classNames(
+                          projectcss.all,
+                          projectcss.__wab_text,
+                          sty.text__uAqZg
+                        )}
+                      >
+                        {"25.4"}
+                      </div>
+                    </Td>
+                  </Tr>
+                </Tbody>
+              </Table>
+            </TableContainer>
+
             {true ? (
               <p.Stack
                 as={"div"}
@@ -318,6 +734,7 @@ function PlasmicHomepage__RenderFunc(props: {
                   data-plasmic-name={"checkboxGroup"}
                   data-plasmic-override={overrides.checkboxGroup}
                   className={classNames("__wab_instance", sty.checkboxGroup)}
+                  isDisabled={false}
                   size={"lg" as const}
                 >
                   <Checkbox
@@ -346,6 +763,10 @@ function PlasmicHomepage__RenderFunc(props: {
                       sty.checkbox__zQWy4
                     )}
                     colorScheme={"blue" as const}
+                    isDisabled={false}
+                    isIndeterminate={false}
+                    isInvalid={false}
+                    isRequired={false}
                     spacing={"0.5rem" as const}
                     value={"2" as const}
                   >
@@ -549,6 +970,137 @@ function PlasmicHomepage__RenderFunc(props: {
               </div>
             </StatHelpText>
           </Stat>
+
+          <Tabs
+            data-plasmic-name={"tabs"}
+            data-plasmic-override={overrides.tabs}
+            className={classNames("__wab_instance", sty.tabs)}
+            isFitted={true}
+            orientation={"vertical" as const}
+            variant={"enclosed-colored" as const}
+          >
+            <TabList
+              data-plasmic-name={"tabList"}
+              data-plasmic-override={overrides.tabList}
+              className={classNames("__wab_instance", sty.tabList)}
+            >
+              <Tab
+                className={classNames("__wab_instance", sty.tab__hrGna)}
+                isDisabled={false}
+              >
+                <div
+                  className={classNames(
+                    projectcss.all,
+                    projectcss.__wab_text,
+                    sty.text__vyO6J
+                  )}
+                >
+                  {"Tab 1"}
+                </div>
+              </Tab>
+
+              <Tab className={classNames("__wab_instance", sty.tab___4V5ZS)}>
+                <div
+                  className={classNames(
+                    projectcss.all,
+                    projectcss.__wab_text,
+                    sty.text__bEzDw
+                  )}
+                >
+                  {"Tab 2"}
+                </div>
+              </Tab>
+
+              <Tab
+                className={classNames("__wab_instance", sty.tab__kl7Z)}
+                isDisabled={false}
+              >
+                <div
+                  className={classNames(
+                    projectcss.all,
+                    projectcss.__wab_text,
+                    sty.text__z7X1J
+                  )}
+                >
+                  {"Tab 3"}
+                </div>
+              </Tab>
+
+              <Tab className={classNames("__wab_instance", sty.tab__eaTmB)}>
+                <div
+                  className={classNames(
+                    projectcss.all,
+                    projectcss.__wab_text,
+                    sty.text__lkhVu
+                  )}
+                >
+                  {"Tab 4"}
+                </div>
+              </Tab>
+            </TabList>
+
+            <TabPanels
+              data-plasmic-name={"tabPanels"}
+              data-plasmic-override={overrides.tabPanels}
+              className={classNames("__wab_instance", sty.tabPanels)}
+            >
+              <TabPanel
+                className={classNames("__wab_instance", sty.tabPanel__hEe2Q)}
+              >
+                <div
+                  className={classNames(
+                    projectcss.all,
+                    projectcss.__wab_text,
+                    sty.text__cw0Ou
+                  )}
+                >
+                  {"Tab 1's Panel Content"}
+                </div>
+              </TabPanel>
+
+              <TabPanel
+                className={classNames("__wab_instance", sty.tabPanel__wzL8R)}
+              >
+                <div
+                  className={classNames(
+                    projectcss.all,
+                    projectcss.__wab_text,
+                    sty.text___6EhAv
+                  )}
+                >
+                  {"Tab 2's Panel Content"}
+                </div>
+              </TabPanel>
+
+              <TabPanel
+                className={classNames("__wab_instance", sty.tabPanel___613HX)}
+              >
+                <div
+                  className={classNames(
+                    projectcss.all,
+                    projectcss.__wab_text,
+                    sty.text__md5DJ
+                  )}
+                >
+                  {"Tab 3's Panel Content"}
+                </div>
+              </TabPanel>
+
+              <TabPanel
+                className={classNames("__wab_instance", sty.tabPanel__z1Utv)}
+              >
+                <div
+                  className={classNames(
+                    projectcss.all,
+                    projectcss.__wab_text,
+                    sty.text___9Mv0B
+                  )}
+                >
+                  {"Tab 4's Panel Content"}
+                </div>
+              </TabPanel>
+            </TabPanels>
+          </Tabs>
         </div>
       </div>
     </React.Fragment>
@@ -560,25 +1112,49 @@ const PlasmicDescendants = {
     "root",
     "section",
     "buttonGroup",
-    "radioGroup",
+    "mainActoin",
+    "numberInput",
+    "tableContainer",
+    "table",
+    "tableCaption",
+    "thead",
+    "tbody",
     "checkboxGroup",
     "breadcrumb",
     "aspectRatio",
-    "stat"
+    "stat",
+    "tabs",
+    "tabList",
+    "tabPanels"
   ],
   section: [
     "section",
     "buttonGroup",
-    "radioGroup",
+    "mainActoin",
+    "numberInput",
+    "tableContainer",
+    "table",
+    "tableCaption",
+    "thead",
+    "tbody",
     "checkboxGroup",
     "breadcrumb"
   ],
-  buttonGroup: ["buttonGroup"],
-  radioGroup: ["radioGroup"],
+  buttonGroup: ["buttonGroup", "mainActoin"],
+  mainActoin: ["mainActoin"],
+  numberInput: ["numberInput"],
+  tableContainer: ["tableContainer", "table", "tableCaption", "thead", "tbody"],
+  table: ["table", "tableCaption", "thead", "tbody"],
+  tableCaption: ["tableCaption"],
+  thead: ["thead"],
+  tbody: ["tbody"],
   checkboxGroup: ["checkboxGroup"],
   breadcrumb: ["breadcrumb"],
   aspectRatio: ["aspectRatio"],
-  stat: ["stat"]
+  stat: ["stat"],
+  tabs: ["tabs", "tabList", "tabPanels"],
+  tabList: ["tabList"],
+  tabPanels: ["tabPanels"]
 } as const;
 type NodeNameType = keyof typeof PlasmicDescendants;
 type DescendantsType<T extends NodeNameType> =
@@ -587,11 +1163,20 @@ type NodeDefaultElementType = {
   root: "div";
   section: "section";
   buttonGroup: typeof ButtonGroup;
-  radioGroup: typeof RadioGroup;
+  mainActoin: typeof Button;
+  numberInput: typeof NumberInput;
+  tableContainer: typeof TableContainer;
+  table: typeof Table;
+  tableCaption: typeof TableCaption;
+  thead: typeof Thead;
+  tbody: typeof Tbody;
   checkboxGroup: typeof CheckboxGroup;
   breadcrumb: typeof Breadcrumb;
   aspectRatio: typeof AspectRatio;
   stat: typeof Stat;
+  tabs: typeof Tabs;
+  tabList: typeof TabList;
+  tabPanels: typeof TabPanels;
 };
 
 type ReservedPropsType = "variants" | "args" | "overrides";
@@ -657,11 +1242,20 @@ export const PlasmicHomepage = Object.assign(
     // Helper components rendering sub-elements
     section: makeNodeComponent("section"),
     buttonGroup: makeNodeComponent("buttonGroup"),
-    radioGroup: makeNodeComponent("radioGroup"),
+    mainActoin: makeNodeComponent("mainActoin"),
+    numberInput: makeNodeComponent("numberInput"),
+    tableContainer: makeNodeComponent("tableContainer"),
+    table: makeNodeComponent("table"),
+    tableCaption: makeNodeComponent("tableCaption"),
+    thead: makeNodeComponent("thead"),
+    tbody: makeNodeComponent("tbody"),
     checkboxGroup: makeNodeComponent("checkboxGroup"),
     breadcrumb: makeNodeComponent("breadcrumb"),
     aspectRatio: makeNodeComponent("aspectRatio"),
     stat: makeNodeComponent("stat"),
+    tabs: makeNodeComponent("tabs"),
+    tabList: makeNodeComponent("tabList"),
+    tabPanels: makeNodeComponent("tabPanels"),
 
     // Metadata about props expected for PlasmicHomepage
     internalVariantProps: PlasmicHomepage__VariantProps,

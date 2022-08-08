@@ -7,6 +7,8 @@ import { PlasmicHomepage } from "../components/plasmic/blank_project/PlasmicHome
 
 function Homepage() {
 
+
+
   return(
   <>
     <ChakraProvider>
