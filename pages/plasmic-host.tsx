@@ -47,7 +47,15 @@ import {
   TabPanel,
   Switch,
   Badge,
-
+  Popover,
+  PopoverTrigger,
+  PopoverContent,
+  PopoverHeader,
+  PopoverBody,
+  PopoverFooter,
+  PopoverArrow,
+  PopoverCloseButton,
+  PopoverAnchor,
 } from "@chakra-ui/react";
 
 registerComponent(Image, {
@@ -1500,8 +1508,245 @@ registerComponent(TabPanel, {
     },
   },
 });
+registerComponent(Switch, {
+  name: "Switch",
+  importPath: "@chakra-ui/react",
+  props: {
+    isChecked: "boolean",
+    colorScheme: {
+      type: "choice",
+      options: [
+        "whiteAlpha",
+        "blackAlpha",
+        "gray",
+        "red",
+        "orange",
+        "yellow",
+        "green",
+        "teal",
+        "blue",
+        "cyan",
+        "purple",
+        "pink",
+        "linkedin",
+        "facebook",
+        "messenger",
+        "whatsapp",
+        "twitter",
+        "telegram",
+      ],
+      defaultValue: "blue",
+    },
+    size: {
+      type: "choice",
+      options: ["sm", "md", "lg"],
+      defaultValue: "md",
+    },
+    spacing: {
+      type: "string",
+      defaultValue: "0.5rem",
+    },
+    id: "string",
+    isDisabled: "boolean",
+    isInvalid: "boolean",
+    isReadOnly: "boolean",
+    isRequired: "boolean",
+  },
+});
 
+registerComponent(Badge, {
+  name: "Badge",
+  importPath: "@chakra-ui/react",
+  props: {
+    colorScheme: {
+      type: "choice",
+      options: [
+        "whiteAlpha",
+        "blackAlpha",
+        "gray",
+        "red",
+        "orange",
+        "yellow",
+        "green",
+        "teal",
+        "blue",
+        "cyan",
+        "purple",
+        "pink",
+        "linkedin",
+        "facebook",
+        "messenger",
+        "whatsapp",
+        "twitter",
+        "telegram",
+      ],
+      defaultValue: "gray",
+    },
+    variant: {
+      type: "choice",
+      options: ["solid", "subtle", "outline"],
+      defaultValue: "subtle",
+    },
+  },
+});
 
+registerComponent(Popover, {
+  name: "Popover",
+  importPath: "@chakra-ui/react",
+  props: {
+    gutter: {
+      type: "number",
+      defaultValue: 8,
+    },
+    arrowPadding: "number",
+    arrowShadowColor: {
+      type: "string",
+      defaultValue: "rgba(0, 0, 0, 0.15)",
+    },
+    arrowSize: {
+      type: "number",
+    },
+    offset: {
+      type: "array",
+      defaultValue: [0, 0],
+    },
+    closeDelay: "number",
+    orientation: {
+      type: "choice",
+      options: ["horizontal", "vertical"],
+    },
+    placement: {
+      type: "choice",
+      options: ["top", "bottom", "left", "right"],
+      defaultValue: "bottom",
+    },
+    direction: {
+      type: "choice",
+      options: ["ltr", "rtl"],
+      defaultValue: "ltr",
+    },
+    trigger: {
+      type: "choice",
+      options: ["click", "hover"],
+      defaultValue: "click",
+    },
+    isLazy: {
+      type: "boolean",
+    },
+    isOpen: {
+      type: "boolean",
+    },
+    children: {
+      type: "slot",
+      defaultValue: [
+        {
+          type: "component",
+          name: "PopoverTrigger",
+        },
+        {
+          type: "component",
+          name: "PopoverContent",
+        },
+      ],
+    },
+  },
+});
+
+registerComponent(PopoverContent, {
+  name: "PopoverContent",
+  importPath: "@chakra-ui/react",
+  props: {
+    children: {
+      type: "slot",
+      defaultValue: [
+        {
+          type: "component",
+          name: "PopoverArrow",
+        },
+        {
+          type: "component",
+          name: "PopoverCloseButton",
+        },
+        {
+          type: "component",
+          name: "PopoverHeader",
+          props: {
+            children: {
+              type: "text",
+              value: "Confirmation!",
+            },
+          },
+        },
+        {
+          type: "component",
+          name: "PopoverBody",
+          props: {
+            children: {
+              type: "text",
+              value: "Are you sure you want to have that milkshake?",
+            },
+          },
+        },
+      ],
+    },
+  },
+});
+registerComponent(PopoverArrow, {
+  name: "PopoverArrow",
+  importPath: "@chakra-ui/react",
+  props: {},
+});
+registerComponent(PopoverCloseButton, {
+  name: "PopoverCloseButton",
+  importPath: "@chakra-ui/react",
+  props: {},
+});
+registerComponent(PopoverHeader, {
+  name: "PopoverHeader",
+  importPath: "@chakra-ui/react",
+  props: {
+    children: {
+      type: "slot",
+      defaultValue: {
+        type: "text",
+        defaultValue: "Confirmation!",
+      },
+    },
+  },
+});
+registerComponent(PopoverBody, {
+  name: "PopoverBody",
+  importPath: "@chakra-ui/react",
+  props: {
+    children: {
+      type: "slot",
+      defaultValue: {
+        type: "text",
+        value: "Are you sure you want to have that milkshake?",
+      },
+    },
+  },
+});
+
+registerComponent(PopoverTrigger, {
+  name: "PopoverTrigger",
+  importPath: "@chakra-ui/react",
+  props: {
+    children: {
+      type: "slot",
+      defaultValue: {
+        type: "component",
+        name: "Button",
+        props: {
+          children: {
+            type: "text",
+            value: "Trigger",
+          },
+        },
+      },
+    },
+  },
+});
 
 export default function PlasmicHost() {
   return (

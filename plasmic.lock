@@ -1,56 +1,30 @@
 {
   "projects": [
     {
-      "projectId": "mn1ZNGsn3XwqRSXADLXKwX",
+      "projectId": "gMM6j64kFpVw2LjyZ579pf",
       "version": "latest",
-      "dependencies": {
-        "caTPwKxj5ZrD9LQ7DMdK4Z": "3.0.0"
-      },
-      "lang": "ts",
-      "fileLocks": [
-        {
-          "type": "globalVariant",
-          "assetId": "1stJQ6tsfmTgf",
-          "checksum": "1033bbfb42d431479687848dd076f417"
-        },
-        {
-          "type": "renderModule",
-          "assetId": "lwZBb7B2-AWx",
-          "checksum": "8b3e2719340ec38745afb8d108cc3de5"
-        },
-        {
-          "type": "cssRules",
-          "assetId": "lwZBb7B2-AWx",
-          "checksum": "8b3e2719340ec38745afb8d108cc3de5"
-        },
-        {
-          "assetId": "mn1ZNGsn3XwqRSXADLXKwX",
-          "type": "projectCss",
-          "checksum": "5552618afa48463a278afcb16a7063e7"
-        },
-        {
-          "type": "renderModule",
-          "assetId": "cvCQxfRYHo",
-          "checksum": "48c4fb3bbcd7a40e51d1e9be08a21212"
-        },
-        {
-          "type": "cssRules",
-          "assetId": "cvCQxfRYHo",
-          "checksum": "48c4fb3bbcd7a40e51d1e9be08a21212"
-        }
-      ],
-      "codegenVersion": "0.0.1"
-    },
-    {
-      "projectId": "caTPwKxj5ZrD9LQ7DMdK4Z",
-      "version": "3.0.0",
       "dependencies": {},
       "lang": "ts",
       "fileLocks": [
         {
-          "assetId": "caTPwKxj5ZrD9LQ7DMdK4Z",
+          "type": "globalVariant",
+          "assetId": "ZjtsoPPYrSIw6",
+          "checksum": "81dcdc548423171646a25387969b41dd"
+        },
+        {
+          "assetId": "gMM6j64kFpVw2LjyZ579pf",
           "type": "projectCss",
-          "checksum": "748c2db198285121f5dad63414f1fabb"
+          "checksum": "ec2312c14e4fc8cecdf0a7209622817e"
+        },
+        {
+          "type": "renderModule",
+          "assetId": "qnMVd5StA27B",
+          "checksum": "dc571a7b0a05e999951dae9aeb0cfe30"
+        },
+        {
+          "type": "cssRules",
+          "assetId": "qnMVd5StA27B",
+          "checksum": "dc571a7b0a05e999951dae9aeb0cfe30"
         }
       ],
       "codegenVersion": "0.0.1"

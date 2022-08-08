@@ -7,7 +7,7 @@
   },
   "style": {
     "scheme": "css-modules",
-    "defaultStyleCssFilePath": "plasmic/plasmic__default_style.module.css"
+    "defaultStyleCssFilePath": "plasmic/plasmic__default_style.css"
   },
   "images": {
     "scheme": "public-files",
@@ -22,35 +22,22 @@
   "defaultPlasmicDir": "./plasmic",
   "projects": [
     {
-      "projectId": "mn1ZNGsn3XwqRSXADLXKwX",
-      "projectApiToken": "EffJJh11lsNY9PClsVui1AITvsf7SLhe4D2AXWQNh0KXwiA1hPO5DpmDsqKGZzSAxK9EemhSWFvCOez2f702g",
+      "projectId": "gMM6j64kFpVw2LjyZ579pf",
+      "projectApiToken": "b2TMYumlyDYmTagcYcbBYI49FRWDbsVgAQOBFX7IxwWPrksxcwEmQ6P0P43kAf7IUCjIbddllt5TEkovVeg",
       "projectName": "Blank project",
       "version": "latest",
       "cssFilePath": "plasmic/blank_project/plasmic_blank_project.module.css",
       "components": [
         {
-          "id": "lwZBb7B2-AWx",
+          "id": "qnMVd5StA27B",
           "name": "Homepage",
           "type": "managed",
-          "projectId": "mn1ZNGsn3XwqRSXADLXKwX",
+          "projectId": "gMM6j64kFpVw2LjyZ579pf",
           "renderModuleFilePath": "plasmic/blank_project/PlasmicHomepage.tsx",
           "importSpec": {
             "modulePath": "../pages/index.tsx"
           },
           "cssFilePath": "plasmic/blank_project/PlasmicHomepage.module.css",
-          "scheme": "blackbox",
-          "componentType": "page"
-        },
-        {
-          "id": "cvCQxfRYHo",
-          "name": "NewPage",
-          "type": "managed",
-          "projectId": "mn1ZNGsn3XwqRSXADLXKwX",
-          "renderModuleFilePath": "plasmic/blank_project/PlasmicNewPage.tsx",
-          "importSpec": {
-            "modulePath": "../pages/new.tsx"
-          },
-          "cssFilePath": "plasmic/blank_project/PlasmicNewPage.module.css",
           "scheme": "blackbox",
           "componentType": "page"
         }
@@ -59,270 +46,15 @@
       "images": [],
       "indirect": false,
       "globalContextsFilePath": "",
-      "codeComponents": [
-        {
-          "id": "LRFPPuGisY",
-          "name": "Image",
-          "componentImportPath": "@chakra-ui/react"
-        },
-        {
-          "id": "NQ4BdCXQvL",
-          "name": "AspectRatio",
-          "componentImportPath": "@chakra-ui/react"
-        },
-        {
-          "id": "z05_GGnPt1",
-          "name": "ButtonGroup",
-          "componentImportPath": "@chakra-ui/react"
-        },
-        {
-          "id": "lBI7CYLJKC",
-          "name": "Button",
-          "componentImportPath": "@chakra-ui/react"
-        },
-        {
-          "id": "TFAlJNpC2r",
-          "name": "Stack",
-          "componentImportPath": "@chakra-ui/react"
-        },
-        {
-          "id": "498QTUgUI2b",
-          "name": "Checkbox",
-          "componentImportPath": "@chakra-ui/react"
-        },
-        {
-          "id": "-OCQWvB3hmc",
-          "name": "CheckboxGroup",
-          "componentImportPath": "@chakra-ui/react"
-        },
-        {
-          "id": "qvP-c_lizPb",
-          "name": "Input",
-          "componentImportPath": "@chakra-ui/react"
-        },
-        {
-          "id": "tgX4qcL5qKk",
-          "name": "NumberInputField",
-          "componentImportPath": "@chakra-ui/react"
-        },
-        {
-          "id": "kKMO80aFVAu",
-          "name": "NumberIncrementStepper",
-          "componentImportPath": "@chakra-ui/react"
-        },
-        {
-          "id": "JdqSKBIDFP1",
-          "name": "NumberDecrementStepper",
-          "componentImportPath": "@chakra-ui/react"
-        },
-        {
-          "id": "6NyNAwxhSqI",
-          "name": "NumberInputStepper",
-          "componentImportPath": "@chakra-ui/react"
-        },
-        {
-          "id": "M5UEPTINXEU",
-          "name": "NumberInput",
-          "componentImportPath": "@chakra-ui/react"
-        },
-        {
-          "id": "chdOYOaIfrh",
-          "name": "PinInputField",
-          "componentImportPath": "@chakra-ui/react"
-        },
-        {
-          "id": "ohichqBoznd",
-          "name": "PinInput",
-          "componentImportPath": "@chakra-ui/react"
-        },
-        {
-          "id": "lQzFbNgiCYI",
-          "name": "Radio",
-          "componentImportPath": "@chakra-ui/react"
-        },
-        {
-          "id": "vVYokNpJReM",
-          "name": "RadioGroup",
-          "componentImportPath": "@chakra-ui/react"
-        },
-        {
-          "id": "WONXApDq6y",
-          "name": "Divider",
-          "componentImportPath": "@chakra-ui/react"
-        },
-        {
-          "id": "ir7AxY5Rgg",
-          "name": "Code",
-          "componentImportPath": "@chakra-ui/react"
-        },
-        {
-          "id": "zprI58GtvD",
-          "name": "Kbd",
-          "componentImportPath": "@chakra-ui/react"
-        },
-        {
-          "id": "rwZ_P-lUbf",
-          "name": "StatLabel",
-          "componentImportPath": "@chakra-ui/react"
-        },
-        {
-          "id": "GRJ7z-sfLI",
-          "name": "StatNumber",
-          "componentImportPath": "@chakra-ui/react"
-        },
-        {
-          "id": "kXkG5kXOBP1",
-          "name": "StatArrow",
-          "componentImportPath": "@chakra-ui/react"
-        },
-        {
-          "id": "Ib6pD3xuSwL",
-          "name": "StatHelpText",
-          "componentImportPath": "@chakra-ui/react"
-        },
-        {
-          "id": "DGteNCf1dk8",
-          "name": "Stat",
-          "componentImportPath": "@chakra-ui/react"
-        },
-        {
-          "id": "e1H2jswnag",
-          "name": "BreadcrumbItem",
-          "componentImportPath": "@chakra-ui/react"
-        },
-        {
-          "id": "2_XxWYnJ9H",
-          "name": "BreadcrumbLink",
-          "componentImportPath": "@chakra-ui/react"
-        },
-        {
-          "id": "C0oswHBaDm",
-          "name": "Breadcrumb",
-          "componentImportPath": "@chakra-ui/react"
-        },
-        {
-          "id": "g3ij24bInV",
-          "name": "BreadcrumbSeparator",
-          "componentImportPath": "@chakra-ui/react"
-        },
-        {
-          "id": "vOT4NZm6m6",
-          "name": "Text",
-          "componentImportPath": "@chakra-ui/react"
-        },
-        {
-          "id": "p-uH97tBjT",
-          "name": "Table",
-          "componentImportPath": "@chakra-ui/react"
-        },
-        {
-          "id": "jruH1ReJS_",
-          "name": "TableCaption",
-          "componentImportPath": "@chakra-ui/react"
-        },
-        {
-          "id": "EknQA5DBzi",
-          "name": "Thead",
-          "componentImportPath": "@chakra-ui/react"
-        },
-        {
-          "id": "pmVMk5B8To",
-          "name": "Tbody",
-          "componentImportPath": "@chakra-ui/react"
-        },
-        {
-          "id": "yVuCojkn7I",
-          "name": "Tr",
-          "componentImportPath": "@chakra-ui/react"
-        },
-        {
-          "id": "D42FISmxted",
-          "name": "Td",
-          "componentImportPath": "@chakra-ui/react"
-        },
-        {
-          "id": "yv2nJfPfy_",
-          "name": "Th",
-          "componentImportPath": "@chakra-ui/react"
-        },
-        {
-          "id": "vxqFFmbt7P",
-          "name": "TableContainer",
-          "componentImportPath": "@chakra-ui/react"
-        },
-        {
-          "id": "VzW3-QlDZ-",
-          "name": "TabList",
-          "componentImportPath": "@chakra-ui/react"
-        },
-        {
-          "id": "9bEU_Pxl1R",
-          "name": "Tabs",
-          "componentImportPath": "@chakra-ui/react"
-        },
-        {
-          "id": "j36wLaWZuB",
-          "name": "Tab",
-          "componentImportPath": "@chakra-ui/react"
-        },
-        {
-          "id": "jlPeg7hy9p",
-          "name": "TabPanels",
-          "componentImportPath": "@chakra-ui/react"
-        },
-        {
-          "id": "0gFJbuL9g9",
-          "name": "TabPanel",
-          "componentImportPath": "@chakra-ui/react"
-        },
-        {
-          "id": "HP6HeJpP_x",
-          "name": "Switch",
-          "componentImportPath": "@chakra-ui/react"
-        },
-        {
-          "id": "LoTEFNj5Fd",
-          "name": "Badge",
-          "componentImportPath": "@chakra-ui/react"
-        }
-      ]
-    },
-    {
-      "projectId": "caTPwKxj5ZrD9LQ7DMdK4Z",
-      "projectApiToken": "vXGGQpdi9fhcncabBdg8DcMRUbkz0iRW6HS1jzQufQR6QH0MasPwr9SX7ap4SsK3xXwwXmzZtglWGe0Rm2nw",
-      "projectName": "plasmic-basic-components",
-      "version": "3.0.0",
-      "cssFilePath": "plasmic/plasmic_basic_components/plasmic_plasmic_basic_components.module.css",
-      "components": [],
-      "icons": [],
-      "images": [],
-      "indirect": true,
-      "globalContextsFilePath": "",
-      "codeComponents": [
-        {
-          "id": "CMDBvOhaI4s",
-          "name": "Iframe",
-          "componentImportPath": "@plasmicpkgs/plasmic-basic-components"
-        },
-        {
-          "id": "RhitNJW5Zu-",
-          "name": "Video",
-          "componentImportPath": "@plasmicpkgs/plasmic-basic-components"
-        },
-        {
-          "id": "PKldDYkH42",
-          "name": "Embed",
-          "componentImportPath": "@plasmicpkgs/plasmic-basic-components"
-        }
-      ]
+      "codeComponents": []
     }
   ],
   "globalVariants": {
     "variantGroups": [
       {
-        "id": "1stJQ6tsfmTgf",
+        "id": "ZjtsoPPYrSIw6",
         "name": "Screen",
-        "projectId": "mn1ZNGsn3XwqRSXADLXKwX",
+        "projectId": "gMM6j64kFpVw2LjyZ579pf",
         "contextFilePath": "plasmic/blank_project/PlasmicGlobalVariant__Screen.tsx"
       }
     ]
