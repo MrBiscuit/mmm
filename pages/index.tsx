@@ -4,7 +4,7 @@ import * as React from "react";
 
 import { ScreenVariantProvider } from "../components/plasmic/blank_project/PlasmicGlobalVariant__Screen";
 import { PlasmicHomepage } from "../components/plasmic/blank_project/PlasmicHomepage";
-
+import {ChakraProvider} from '@chakra-ui/react';
 function Homepage() {
   // Use PlasmicHomepage to render this component as it was
   // designed in Plasmic, by activating the appropriate variants,
@@ -22,7 +22,11 @@ function Homepage() {
   // variant context providers. These wrappers may be moved to
   // Next.js Custom App component
   // (https://nextjs.org/docs/advanced-features/custom-app).
-  return <PlasmicHomepage />;
+  return (
+    <ChakraProvider>
+      <PlasmicHomepage />;
+    </ChakraProvider>
+  );
 }
 
 export default Homepage;

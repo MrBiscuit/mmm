@@ -1,4 +1,5 @@
 import { PlasmicCanvasHost, registerComponent } from "@plasmicapp/host";
+import {Option} from "../components/option";
 import {
   AspectRatio,
   Image,
@@ -56,6 +57,8 @@ import {
   PopoverArrow,
   PopoverCloseButton,
   PopoverAnchor,
+  Select,
+  
 } from "@chakra-ui/react";
 
 registerComponent(Image, {
@@ -80,6 +83,7 @@ registerComponent(Image, {
     },
   },
 });
+
 registerComponent(AspectRatio, {
   name: "AspectRatio",
   importPath: "@chakra-ui/react",
@@ -250,10 +254,6 @@ registerComponent(Stack, {
       type: "number",
       defaultValue: 8,
     },
-    divider: {
-      type: "choice",
-      options: ["none", "full", "vertical", "horizontal"],
-    },
     wrap: {
       type: "choice",
       options: ["wrap", "nowrap"],
@@ -343,7 +343,7 @@ registerComponent(CheckboxGroup, {
     },
     children: {
       type: "slot",
-      allowedComponents: ["Checkbox", "Stack"],
+      allowedComponents: ["Checkbox"],
       defaultValue: [
         {
           type: "component",
@@ -394,6 +394,9 @@ registerComponent(Input, {
     variant: {
       type: "choice",
       options: ["outline", "filled", "flushed", "unstyled"],
+    },
+    placeholder:{
+      type: "string",
     },
     isDisabled: {
       type: "boolean",
@@ -716,20 +719,7 @@ registerComponent(RadioGroup, {
     },
   },
 });
-registerComponent(Divider, {
-  name: "Divider",
-  importPath: "@chakra-ui/react",
-  props: {
-    orientation: {
-      type: "choice",
-      options: ["vertical", "horizontal"],
-    },
-    variant: {
-      type: "choice",
-      options: ["solid", "dashed"],
-    },
-  },
-});
+
 
 registerComponent(Code, {
   name: "Code",
@@ -779,6 +769,7 @@ registerComponent(Code, {
 registerComponent(Kbd, {
   name: "Kbd",
   importPath: "@chakra-ui/react",
+  displayName: "Keyboard Key",
   props: {
     children: {
       type: "slot",
@@ -1313,7 +1304,7 @@ registerComponent(TabList, {
   props: {
     children: {
       type: "slot",
-      allowedComponents: ["Tabs"],
+      allowedComponents: ["Tab"],
     },
   },
 });
@@ -1586,7 +1577,13 @@ registerComponent(Badge, {
       type: "choice",
       options: ["solid", "subtle", "outline"],
       defaultValue: "subtle",
-    },
+    },children:{
+      type: "slot",
+      defaultValue: {
+        type: "text",
+        value: "Badge",
+      }
+    }
   },
 });
 
@@ -1655,6 +1652,7 @@ registerComponent(Popover, {
 registerComponent(PopoverContent, {
   name: "PopoverContent",
   importPath: "@chakra-ui/react",
+  parentComponentName: "Popover",
   props: {
     children: {
       type: "slot",
@@ -1694,22 +1692,26 @@ registerComponent(PopoverContent, {
 registerComponent(PopoverArrow, {
   name: "PopoverArrow",
   importPath: "@chakra-ui/react",
+  parentComponentName: "PopoverContent",
   props: {},
 });
 registerComponent(PopoverCloseButton, {
   name: "PopoverCloseButton",
   importPath: "@chakra-ui/react",
+  parentComponentName: "PopoverContent",
+
   props: {},
 });
 registerComponent(PopoverHeader, {
   name: "PopoverHeader",
   importPath: "@chakra-ui/react",
+  parentComponentName: "PopoverContent",
   props: {
     children: {
       type: "slot",
       defaultValue: {
         type: "text",
-        defaultValue: "Confirmation!",
+        value: "Confirmation!",
       },
     },
   },
@@ -1717,6 +1719,8 @@ registerComponent(PopoverHeader, {
 registerComponent(PopoverBody, {
   name: "PopoverBody",
   importPath: "@chakra-ui/react",
+  parentComponentName: "PopoverContent",
+
   props: {
     children: {
       type: "slot",
@@ -1731,6 +1735,7 @@ registerComponent(PopoverBody, {
 registerComponent(PopoverTrigger, {
   name: "PopoverTrigger",
   importPath: "@chakra-ui/react",
+  parentComponentName: "Popover",
   props: {
     children: {
       type: "slot",
@@ -1747,6 +1752,90 @@ registerComponent(PopoverTrigger, {
     },
   },
 });
+
+registerComponent(Select,{
+  name: "Select",
+  importPath: "@chakra-ui/react",
+  props:{
+    size:{
+      type:"choice",
+      options:["lg",'md','sm','xs'],
+      defaultValue:'md'
+    },
+    variant:{
+      type:'choice',
+      options:['outline','filled','flushed','unstyled'],
+      defaultValue:'outline'
+    },
+    placeholder:{
+      type:'string',
+    },
+    errorBorderColor:{
+      type:"string",
+      defaultValueHint:"red.500"
+    },
+    isDisabled:{
+      type:"boolean"
+    },
+    isInvalid:{
+      type:"boolean"
+    },
+    isReadOnly:{
+      type:"boolean"
+    },
+    isRequred:{
+      type:"boolean"
+    },
+    children:{
+      type:"slot",
+      defaultValue:[{
+        type:"component",
+        name:"Option",
+        props:{
+          children:{
+            type:"text",
+            value:"Option 01",
+          }
+        }
+      },{
+        type:"component",
+        name:"Option",
+        props:{
+          children:{
+            type:"text",
+            value:"Option 02",
+          }
+        }
+      },{
+        type:"component",
+        name:"Option",
+        props:{
+          children:{
+            type:"text",
+            value:"Option 03",
+          }
+        }
+      }
+      ]
+    }
+   
+  }
+})
+registerComponent(Option,{
+  name:"Option",
+  importPath:"./components/option",
+  parentComponentName:"Select",
+  props:{
+    value:"string",
+    children:{
+      type:"slot",
+      defaultValue:{
+        type:"text",
+        value:"Option",
+      }
+    }
+  }
+})
 
 export default function PlasmicHost() {
   return (

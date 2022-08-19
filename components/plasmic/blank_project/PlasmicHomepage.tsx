@@ -34,6 +34,16 @@ import {
   deriveRenderOpts,
   ensureGlobalVariants
 } from "@plasmicapp/react-web";
+import { NumberInput } from "@chakra-ui/react"; // plasmic-import: 77cphPrM_BX/codeComponent
+import { NumberInputField } from "@chakra-ui/react"; // plasmic-import: PCIchL0CUzi/codeComponent
+import { NumberInputStepper } from "@chakra-ui/react"; // plasmic-import: 0CeztaEFxG5/codeComponent
+import { NumberIncrementStepper } from "@chakra-ui/react"; // plasmic-import: wgBxq05OMO5/codeComponent
+import { NumberDecrementStepper } from "@chakra-ui/react"; // plasmic-import: RDV7ulARdg0/codeComponent
+import { Breadcrumb } from "@chakra-ui/react"; // plasmic-import: zN_-EOpHFYh/codeComponent
+import { BreadcrumbItem } from "@chakra-ui/react"; // plasmic-import: j1Uvqtt-Lsa/codeComponent
+import { BreadcrumbLink } from "@chakra-ui/react"; // plasmic-import: EUEqYxbOL0O/codeComponent
+import { AspectRatio } from "@chakra-ui/react"; // plasmic-import: txAaQW6t6y/codeComponent
+import { Image } from "@chakra-ui/react"; // plasmic-import: HVlClKYnOJ/codeComponent
 
 import "@plasmicapp/react-web/lib/plasmic.css";
 
@@ -53,8 +63,9 @@ export const PlasmicHomepage__ArgProps = new Array<ArgPropType>();
 export type PlasmicHomepage__OverridesType = {
   root?: p.Flex<"div">;
   section?: p.Flex<"section">;
-  h1?: p.Flex<"h1">;
-  text?: p.Flex<"div">;
+  numberInput?: p.Flex<typeof NumberInput>;
+  breadcrumb?: p.Flex<typeof Breadcrumb>;
+  aspectRatio?: p.Flex<typeof AspectRatio>;
 };
 
 export interface DefaultHomepageProps {}
@@ -112,47 +123,170 @@ function PlasmicHomepage__RenderFunc(props: {
             hasGap={true}
             className={classNames(projectcss.all, sty.section)}
           >
-            <h1
-              data-plasmic-name={"h1"}
-              data-plasmic-override={overrides.h1}
-              className={classNames(
-                projectcss.all,
-                projectcss.h1,
-                projectcss.__wab_text,
-                sty.h1
-              )}
+            <NumberInput
+              data-plasmic-name={"numberInput"}
+              data-plasmic-override={overrides.numberInput}
+              allowMouseWheel={false}
+              className={classNames("__wab_instance", sty.numberInput)}
+              errorBorderColor={"red.500" as const}
+              focusBorderColor={"blue.500" as const}
+              format={(() => {
+                try {
+                  return e => "$" + e;
+                } catch (e) {
+                  if (e instanceof TypeError) {
+                    return undefined;
+                  }
+                  throw e;
+                }
+              })()}
+              isDisabled={false}
+              precision={2 as const}
+              size={"md" as const}
+              step={4 as const}
+              variant={"outline" as const}
             >
-              {"Welcome to your first page."}
-            </h1>
+              <NumberInputField
+                className={classNames(
+                  "__wab_instance",
+                  sty.numberInputField__eQpYv
+                )}
+              />
 
-            <div
-              data-plasmic-name={"text"}
-              data-plasmic-override={overrides.text}
-              className={classNames(
-                projectcss.all,
-                projectcss.__wab_text,
-                sty.text
-              )}
+              <NumberInputStepper
+                className={classNames(
+                  "__wab_instance",
+                  sty.numberInputStepper___7B5VF
+                )}
+              >
+                <NumberIncrementStepper
+                  className={classNames(
+                    "__wab_instance",
+                    sty.numberIncrementStepper__e8Xg0
+                  )}
+                />
+
+                <NumberDecrementStepper
+                  className={classNames(
+                    "__wab_instance",
+                    sty.numberDecrementStepper__iB3Rk
+                  )}
+                />
+              </NumberInputStepper>
+            </NumberInput>
+
+            <Breadcrumb
+              data-plasmic-name={"breadcrumb"}
+              data-plasmic-override={overrides.breadcrumb}
+              className={classNames("__wab_instance", sty.breadcrumb)}
+              separator={"/" as const}
+              spacing={"8px" as const}
             >
-              <React.Fragment>
-                <React.Fragment>
-                  {
-                    "If you haven't already done so, go back and learn the basics by going through the Plasmic Levels tutorial.\n\nIt's always easier to start from examples! Add a new page using a template—do this from the list of pages in the top left (the gray + button).\n\nOr press the big blue + button to start dragging items into this page.\n\nIntegrate this project into your codebase—press the "
-                  }
-                </React.Fragment>
-                <span
-                  className={"plasmic_default__all plasmic_default__span"}
-                  style={{ fontWeight: 700 }}
+              <BreadcrumbItem
+                className={classNames(
+                  "__wab_instance",
+                  sty.breadcrumbItem___5Vks
+                )}
+                seperator={"/" as const}
+                spacing={"8px" as const}
+              >
+                <BreadcrumbLink
+                  className={classNames(
+                    "__wab_instance",
+                    sty.breadcrumbLink___5Y9O
+                  )}
+                  href={"#" as const}
                 >
-                  {"Code"}
-                </span>
-                <React.Fragment>
-                  {
-                    " button in the top right and follow the quickstart instructions.\n\nJoin our Slack community (icon in bottom left) for help any time."
+                  <div
+                    className={classNames(
+                      projectcss.all,
+                      projectcss.__wab_text,
+                      sty.text__zVef7
+                    )}
+                  >
+                    {"Home"}
+                  </div>
+                </BreadcrumbLink>
+              </BreadcrumbItem>
+
+              <BreadcrumbItem
+                className={classNames(
+                  "__wab_instance",
+                  sty.breadcrumbItem__c54Z
+                )}
+                seperator={"/" as const}
+                spacing={"8px" as const}
+              >
+                <BreadcrumbLink
+                  className={classNames(
+                    "__wab_instance",
+                    sty.breadcrumbLink__whtz5
+                  )}
+                  href={"#" as const}
+                >
+                  <div
+                    className={classNames(
+                      projectcss.all,
+                      projectcss.__wab_text,
+                      sty.text__p5Tij
+                    )}
+                  >
+                    {"Docs"}
+                  </div>
+                </BreadcrumbLink>
+              </BreadcrumbItem>
+
+              <BreadcrumbItem
+                className={classNames(
+                  "__wab_instance",
+                  sty.breadcrumbItem__sxBl
+                )}
+                isCurrentPage={true}
+                isLastChild={true}
+                seperator={"/" as const}
+                spacing={"8px" as const}
+              >
+                <BreadcrumbLink
+                  className={classNames(
+                    "__wab_instance",
+                    sty.breadcrumbLink__skvIr
+                  )}
+                  href={"#" as const}
+                >
+                  <div
+                    className={classNames(
+                      projectcss.all,
+                      projectcss.__wab_text,
+                      sty.text__w82F4
+                    )}
+                  >
+                    {"Breadcrumb"}
+                  </div>
+                </BreadcrumbLink>
+              </BreadcrumbItem>
+            </Breadcrumb>
+
+            <AspectRatio
+              data-plasmic-name={"aspectRatio"}
+              data-plasmic-override={overrides.aspectRatio}
+              className={classNames("__wab_instance", sty.aspectRatio)}
+              ratio={(() => {
+                try {
+                  return 16 / 10;
+                } catch (e) {
+                  if (e instanceof TypeError) {
+                    return 1.666;
                   }
-                </React.Fragment>
-              </React.Fragment>
-            </div>
+                  throw e;
+                }
+              })()}
+            >
+              <Image
+                className={classNames("__wab_instance", sty.image__g1Niu)}
+                fallbackSrc={"https://via.placeholder.com/150" as const}
+                src={"https://bit.ly/naruto-sage" as const}
+              />
+            </AspectRatio>
           </p.Stack>
         </div>
       </div>
@@ -161,10 +295,11 @@ function PlasmicHomepage__RenderFunc(props: {
 }
 
 const PlasmicDescendants = {
-  root: ["root", "section", "h1", "text"],
-  section: ["section", "h1", "text"],
-  h1: ["h1"],
-  text: ["text"]
+  root: ["root", "section", "numberInput", "breadcrumb", "aspectRatio"],
+  section: ["section", "numberInput", "breadcrumb", "aspectRatio"],
+  numberInput: ["numberInput"],
+  breadcrumb: ["breadcrumb"],
+  aspectRatio: ["aspectRatio"]
 } as const;
 type NodeNameType = keyof typeof PlasmicDescendants;
 type DescendantsType<T extends NodeNameType> =
@@ -172,8 +307,9 @@ type DescendantsType<T extends NodeNameType> =
 type NodeDefaultElementType = {
   root: "div";
   section: "section";
-  h1: "h1";
-  text: "div";
+  numberInput: typeof NumberInput;
+  breadcrumb: typeof Breadcrumb;
+  aspectRatio: typeof AspectRatio;
 };
 
 type ReservedPropsType = "variants" | "args" | "overrides";
@@ -238,8 +374,9 @@ export const PlasmicHomepage = Object.assign(
   {
     // Helper components rendering sub-elements
     section: makeNodeComponent("section"),
-    h1: makeNodeComponent("h1"),
-    text: makeNodeComponent("text"),
+    numberInput: makeNodeComponent("numberInput"),
+    breadcrumb: makeNodeComponent("breadcrumb"),
+    aspectRatio: makeNodeComponent("aspectRatio"),
 
     // Metadata about props expected for PlasmicHomepage
     internalVariantProps: PlasmicHomepage__VariantProps,

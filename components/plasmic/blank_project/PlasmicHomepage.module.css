@@ -37,18 +37,84 @@
   > img {
   margin-top: 16px;
 }
-.h1 {
+.numberInput:global(.__wab_instance) {
+  max-width: 100%;
+  object-fit: cover;
+  position: relative;
+}
+.numberInputField__eQpYv:global(.__wab_instance) {
+  max-width: 100%;
+  object-fit: cover;
+}
+.numberInputStepper___7B5VF:global(.__wab_instance) {
+  max-width: 100%;
+  object-fit: cover;
+}
+.numberIncrementStepper__e8Xg0:global(.__wab_instance) {
+  max-width: 100%;
+  object-fit: cover;
+}
+.numberDecrementStepper__iB3Rk:global(.__wab_instance) {
+  max-width: 100%;
+  object-fit: cover;
+}
+.breadcrumb:global(.__wab_instance) {
+  max-width: 100%;
+  object-fit: cover;
+  position: relative;
+}
+.breadcrumbItem___5Vks:global(.__wab_instance) {
+  max-width: 100%;
+  object-fit: cover;
+}
+.breadcrumbLink___5Y9O:global(.__wab_instance) {
+  max-width: 100%;
+  object-fit: cover;
+}
+.text__zVef7 {
   position: relative;
   width: 100%;
   height: auto;
   max-width: 800px;
-  margin-bottom: 32px;
   min-width: 0;
 }
-.text {
+.breadcrumbItem__c54Z:global(.__wab_instance) {
+  max-width: 100%;
+  object-fit: cover;
+}
+.breadcrumbLink__whtz5:global(.__wab_instance) {
+  max-width: 100%;
+  object-fit: cover;
+}
+.text__p5Tij {
   position: relative;
   width: 100%;
   height: auto;
   max-width: 800px;
   min-width: 0;
+}
+.breadcrumbItem__sxBl:global(.__wab_instance) {
+  max-width: 100%;
+  object-fit: cover;
+}
+.breadcrumbLink__skvIr:global(.__wab_instance) {
+  max-width: 100%;
+  object-fit: cover;
+}
+.text__w82F4 {
+  position: relative;
+  width: 100%;
+  height: auto;
+  max-width: 800px;
+  min-width: 0;
+}
+.aspectRatio:global(.__wab_instance) {
+  width: 326px;
+  max-width: 100%;
+  object-fit: cover;
+  position: relative;
+}
+.image__g1Niu:global(.__wab_instance) {
+  max-width: 100%;
+  object-fit: cover;
 }
